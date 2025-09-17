@@ -6,7 +6,9 @@ const port = process.env.port || 8000;
 
 
 //Routes
-app.use('/api/posts', posts)
+app.use('/api/posts', posts) // Here the express sees the path, if it matches '/api/posts', it passes it to router (post.js)
+                            //  the router only sees '/' not the '/api/posts
+
 
 
 
