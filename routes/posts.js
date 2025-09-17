@@ -27,6 +27,20 @@ let posts = [
     }
     res.status(200).json(posts.filter((post) => post.id === id)); // returning only the id which matches the data
   });
-  
-// export default router/
+
+  //Create new post
+  router.post('/',(req,res)=>{
+    const newPost = {
+        id: posts.length + 1,
+        tittle: req.body.tittle
+    }
+
+    if (!newPost.tittle){
+        return res.status(400).json({ message: "please include title"})
+    }
+    
+    posts.push(newPost)
+    console.log(req.body)
+    res.status(200).json(posts);
+  })
 export default router
