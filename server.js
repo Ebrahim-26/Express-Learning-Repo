@@ -15,13 +15,22 @@ let posts = [
 
 //Get all the posts
 app.get("/api/posts", (req, res) => {
-  res.json(posts);
+  const limit = parseInt(req.query.limit); //can get query params using req.query
+  if (!isNaN(limit) && limit > 0) {
+    //checking if it is a num and positive
+    return res.status(200).json(posts.slice(0, limit));
+  }
+  res.status(200).json(posts);
 });
 
 //Get specific post
 app.get("/api/posts/:id", (req, res) => {
-  const id = parseInt(req.params.id) //converting the id string to number
-  res.json(posts.filter((post)=>post.id === id)); // returning only the id which matches the data
+  const id = parseInt(req.params.id); //converting the id string to number
+  const post = posts.find((post) => post.id === id);
+  if (!post) {
+    return res.status(404).json({ message: `ID ${id} doesn't exists` });
+  }
+  res.status(200).json(posts.filter((post) => post.id === id)); // returning only the id which matches the data
 });
 
 app.listen(port, () => console.log(`Server is running on server port ${port}`));
