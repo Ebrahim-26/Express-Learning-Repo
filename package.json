@@ -1,0 +1,25 @@
+{
+  "name": "express-learning-repo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server",
+    "dev": "node --watch server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ebrahim-26/Express-Learning-Repo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ebrahim-26/Express-Learning-Repo/issues"
+  },
+  "homepage": "https://github.com/Ebrahim-26/Express-Learning-Repo#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
