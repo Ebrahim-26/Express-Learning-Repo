@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const app = express();
+const port = process.env.port || 8000
 //setup static folder
 // app.use(express.static(path.join(__dirname, "public")));
 //app.use = middleware
@@ -16,4 +17,4 @@ app.get("/api/posts", (req, res) => {
   res.json(posts);
 });
 
-app.listen(8000, () => console.log(`Server is running on server 8000`));
+app.listen(port, () => console.log(`Server is running on server port ${port}`));
