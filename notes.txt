@@ -1,4 +1,7 @@
 __dirname = give the absolute path
 
+**middleware**
 "app.set()" is how you implement middleware = it is a function that runs between the incoming request and outgoing response.
+
+
 
